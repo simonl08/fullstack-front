@@ -1,29 +1,25 @@
 import React, { useState } from "react";
-import { signup } from "../utils";
+import { login } from "../utils";
 import { Form, StyledInputs, SubmitButton } from "../styles/globalStyles";
 
-export default function SignUp({setUser}) {
+export default function LoginForm ({setUser}) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const signupHandler = async (e) => {
+    const loginHandler = async (e) => {
         e.preventDefault();
-        signup(name, email, password, setUser);
+        login(email, password, setUser);
         
         setName("");
-        setEmail("");
         setPassword("");
     };
     return (
-        <div>
-            <Form onSubmit={signupHandler}>
-                <h1>Register/ Create Account</h1>
-                <StyledInputs type="text" placeholder="Username" onChange={(e) => setName(e.target.value)}></StyledInputs>
+            <Form onSubmit={loginHandler}>
+                <h1>Login</h1>
                 <StyledInputs type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></StyledInputs>
                 <StyledInputs type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></StyledInputs>
                 <SubmitButton type="submit">Submit</SubmitButton>
             </Form>
-        </div>
     );
 }
