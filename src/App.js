@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { signup } from './utils';
+import Home from './pages/Home';
 
 const App = () => {
   const [user, setUser] =useState();
@@ -8,7 +8,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <login/>
+      <Home/>
     </div>
   );
 }

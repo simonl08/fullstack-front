@@ -5,7 +5,7 @@ export const signup = async (username, email, password, setUser) => {
         body: JSON.stringify({
             username: username,
             email: email,
-            password: password
+            password: password // same data as the backend user schema
         }),
     });
     const data = await response.json();
