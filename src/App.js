@@ -3,8 +3,6 @@ import './App.css';
 import Home from './pages/Home';
 
 const App = () => {
-  const [user, setUser] =useState();
-
 
   return (
     <div className="App">
