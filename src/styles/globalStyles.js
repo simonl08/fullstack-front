@@ -52,6 +52,7 @@ export const LoginContainer = styled.div`
     h1{
         font-family: 'Staatliches', cursive;
         font-size: 3rem;
+        text-align: center;
     }
 `;
 
@@ -71,7 +72,7 @@ export const StyledInputs = styled.input`
     height: 40px;
     border-radius: 4px;
     padding: 0px 10px;
-    font-family: 'Staatliches', cursive;
+    /* font-family: 'Staatliches', cursive; */
 `
 
 export const SubmitButton = styled.button`

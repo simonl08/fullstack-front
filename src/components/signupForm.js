@@ -15,13 +15,14 @@ export default function SignUp({setUser}) {
         setEmail("");
         setPassword("");
     };
+
     return (
         <div>
             <Form onSubmit={signupHandler}>
                 <h1>Register/ Create Account</h1>
-                <StyledInputs type="text" placeholder="Username" onChange={(e) => setName(e.target.value)}></StyledInputs>
-                <StyledInputs type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></StyledInputs>
-                <StyledInputs type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></StyledInputs>
+                <StyledInputs type="text" placeholder="Username" value={name} onChange={(e) => setName(e.target.value) }></StyledInputs>
+                <StyledInputs type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></StyledInputs>
+                <StyledInputs type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></StyledInputs>
                 <SubmitButton type="submit">Submit</SubmitButton>
             </Form>
         </div>
