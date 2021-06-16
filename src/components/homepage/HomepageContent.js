@@ -1,4 +1,4 @@
-import { HomepageContainer } from "../styles/globalStyles";
+import { HomepageContainer } from "../../styles/globalStyles";
 
 export default function HomepageContent () {
 

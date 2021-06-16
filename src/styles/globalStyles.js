@@ -1,8 +1,17 @@
 import styled from "styled-components";
 
-
 // =====homepage ======
 export const Container = styled.div` //main page container template
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(101,103,102,1) 51%, rgba(218,210,210,1) 100%);
+    /* background-size: cover; */
+`;
+
+export const ContainerTemplateHome = styled.div` //main page container template
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -87,3 +96,89 @@ export const SubmitButton = styled.button`
     border-color: transparent;
     }
 `
+
+// ========== Movie dashboard ============== // 
+export const Header = styled.header`
+    background-color: #373b69;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+`
+
+export const SearchInput = styled.input`
+    background-color: transparent;
+    border: 2px solid #22254b;
+    border-radius: 50px;
+    color: white;
+    font-family: inherit;
+    font-size: 1.2rem;
+    padding: 0.5rem 5.5rem;
+
+    &:focus{
+        background-color: #22254b;
+        outline: none; 
+    }
+`;
+
+export const MovieContainer = styled.div` 
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+`
+
+export const MovieCards = styled.div`
+    background-color: #373b69;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    overflow: hidden;
+    position: relative;
+    width: 250px;
+
+    img{
+        width: 100%;
+    }
+
+    .movie-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    }
+
+    h3{
+        color: white;
+        margin: 10px;
+        font-size: 20px; 
+    }
+        
+    .movieOver{
+    background-color: #fff;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    box-shadow: 0px -3px 5px rgba(0,0,0,0.1);
+    color: #22254b;
+    position: absolute;
+    bottom: 0;
+    overflow: auto;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+    }
+
+    h2, p{
+        text-align: center;
+        margin-top: 20px;
+    }
+
+
+    &:hover .movieOver {
+    transform: translateY(0%);
+    }
+`;
+   
+
+  
+
+
+

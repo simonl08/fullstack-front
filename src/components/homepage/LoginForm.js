@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { login } from "../utils";
-import { Form, StyledInputs, SubmitButton } from "../styles/globalStyles";
+import { login } from "../../utils";
+import { Form, StyledInputs, SubmitButton } from "../../styles/globalStyles";
 
 export default function LoginForm ({setUser}) {
     const [name, setName] = useState("");
