@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-import Movie from "./components/Movie";
-import "./components/index.css";
+import Movie from "./Movie";
+import "../dashboard/index.css";
+import { Container, Header, SearchInput, MovieContainer } from "../../styles/globalStyles";
 
 const APIURL =
   "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
 const SEARCHAPI =
   "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
-const App = () => {
+const MovieList = () => {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -41,21 +41,22 @@ const App = () => {
 
   return (
     <>
-      <header>
+    <Container>
+      <Header>
         <form onSubmit={handleOnSubmit}>
-          <input
-            className="search"
+          <SearchInput
             type="search"
             placeholder="Search..."
             value={searchTerm}
             onChange={handleOnChange}
           />
         </form>
-      </header>
-      <div className="movie-container">
+      </Header>
+      <MovieContainer>
         {movies.length > 0 &&
           movies.map((movie) => <Movie key={movie.id} {...movie} />)}
-      </div>
+      </MovieContainer>
+      </Container>
     </>
   );
 };

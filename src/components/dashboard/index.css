@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+/* keep ========================== */
+.root { 
+    display: flex;
+    flex-direction: column;
+}
+
+.tag {
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.tag.green {
+    color:green;
+
+}
+.tag.orange{
+    color: orange;
+}
+.tag.red {
+    color: red;
+    
+}

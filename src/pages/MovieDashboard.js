@@ -1,17 +1,12 @@
 import React from 'react';
 
 //components
+import MovieList from '../components/dashboard/MovieList';
 
-
-//component styles
-import { Container } from '../styles/globalStyles';
-
-export default function Home({setUser}) {
+export default function MovieDashboard({setUser}) {
   return (
       <>
-      <Container>
-
-      </Container>
+        <MovieList/>
       </>
   );
 }

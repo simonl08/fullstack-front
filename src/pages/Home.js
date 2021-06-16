@@ -1,24 +1,23 @@
 import React from 'react';
 
 //components
-import SignUp from '../components/signupForm';
-import LoginForm from '../components/LoginForm';
-import HomepageContent from '../components/HomepageContent';
+import SignUp from '../components/homepage/signupForm';
+import LoginForm from '../components/homepage/LoginForm';
+import HomepageContent from '../components/homepage/HomepageContent';
 
 //component styles
-import { Container } from '../styles/globalStyles';
-import { LoginContainer } from "../styles/globalStyles";
+import { LoginContainer, ContainerTemplateHome } from "../styles/globalStyles";
 
 export default function Home({setUser}) {
   return (
       <>
-      <Container>
+      <ContainerTemplateHome>
         <HomepageContent/>
         <LoginContainer>
           <SignUp setUser={setUser} />
           <LoginForm setUser={setUser} />
         </LoginContainer>
-      </Container>
+      </ContainerTemplateHome>
       </>
   );
 }
