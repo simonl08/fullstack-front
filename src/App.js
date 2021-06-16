@@ -1,16 +1,21 @@
-import React, { useState } from 'react';
-import './App.css';
-import { signup } from './utils';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Movie from "./components/Movie";
+import "./components/index.css";
+
 
 const App = () => {
-  const [user, setUser] =useState();
-
-
+  
   return (
-    <div className="App">
-      <login/>
-    </div>
+    
+      
+       <div>
+         
+         Hello
+
+       </div>
+        
   );
-}
+};
 
 export default App;
