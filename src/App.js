@@ -1,20 +1,8 @@
-import React, { useEffect, useState } from "react";
-import "./App.css";
-import Movie from "./components/Movie";
-import "./components/index.css";
+    <div className="App">
+      <GenericStyle/>
+        <Home setUser={setUser}/>
+    </div>
 
-
-const App = () => {
-  
-  return (
-    
-      
-       <div>
-         
-         Hello
-
-       </div>
-        
   );
 };
 
