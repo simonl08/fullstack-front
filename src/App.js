@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import './App.css';
-import { signup } from './utils';
+import Home from './pages/Home';
+import { GenericStyle } from './styles/Theme';
 
 const App = () => {
-  const [user, setUser] =useState();
-
+  const [user, setUser] = useState("");
 
   return (
     <div className="App">
-      <login/>
+      <GenericStyle/>
+        <Home setUser={setUser}/>
     </div>
   );
 }
