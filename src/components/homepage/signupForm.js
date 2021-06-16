@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { signup } from "../../utils";
 import { Form, StyledInputs, SubmitButton } from "../../styles/globalStyles";
 
-export default function SignUp({setUser}) {
+export default function SignUp({user, setUser}) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

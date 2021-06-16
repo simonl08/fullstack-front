@@ -1,6 +1,6 @@
 import React from "react";
 import "../dashboard/index.css"
-import { MovieCards, MovieOver} from "../../styles/globalStyles"
+import { MovieCards } from "../../styles/globalStyles"
 
 const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 

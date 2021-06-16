@@ -12,7 +12,7 @@ export const signup = async (username, email, password, setUser) => {
     setUser(data.username)
 }
 
-export const login = async (email, password, setUser) => {
+export const login = async (email, password, setUser, user) => {
     const response = await fetch('http://localhost:5000/users/login', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -23,6 +23,7 @@ export const login = async (email, password, setUser) => {
     });
     const data = await response.json();
     setUser(data.username)
+    console.log(user)
 }
 
 export const updateUser = async (username, email, password, setUser) => {
