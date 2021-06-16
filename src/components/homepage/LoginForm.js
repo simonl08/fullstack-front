@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import { login } from "../../utils";
 import { Form, StyledInputs, SubmitButton } from "../../styles/globalStyles";
 
-export default function LoginForm ({setUser}) {
-    const [name, setName] = useState("");
+export default function LoginForm ({user, setUser}) {
+    // const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const loginHandler = async (e) => {
         e.preventDefault();
-        login(email, password, setUser);
-        
-        setName("");
-        setPassword("");
+        login(email, password, setUser);  
+
     };
     return (
             <Form onSubmit={loginHandler}>

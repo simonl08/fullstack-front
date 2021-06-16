@@ -96,13 +96,38 @@ export const SubmitButton = styled.button`
     border-color: transparent;
     }
 `
+//========== Movie dashboard ============== // 
+export const Nav = styled.nav`
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
 
+    ul{
+        padding-right: 50px;
+        margin-top: 60px;
+        font-size: 24px;
+    }
+
+    button{
+        padding: 20px;
+        margin-right: 40px;
+        margin-left: 40px;
+    }
+`;
 // ========== Movie dashboard ============== // 
 export const Header = styled.header`
     background-color: #373b69;
     display: flex;
     justify-content: center;
     padding: 1rem;
+`
+
+export const FormSearchbox = styled.form`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
 
 export const SearchInput = styled.input`
@@ -112,7 +137,10 @@ export const SearchInput = styled.input`
     color: white;
     font-family: inherit;
     font-size: 1.2rem;
-    padding: 0.5rem 5.5rem;
+    /* padding: 0.5rem 10rem; */
+    width: 60%;
+    height: 40px;
+    padding-left: 30px;
 
     &:focus{
         background-color: #22254b;
