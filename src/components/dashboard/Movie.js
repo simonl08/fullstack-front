@@ -18,6 +18,7 @@ const Movie = ({title, poster_path, overview, vote_average}) => (
     <MovieCards>
         <img src={IMGPATH + poster_path} alt={title} />
         <div className = "movie-info">
+            <h5>Add to Favourites</h5>
             <h3>{title}</h3>
             <span className={`tag ${setVoteClass(vote_average)}`}>
             {vote_average}

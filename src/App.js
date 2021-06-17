@@ -6,9 +6,14 @@ import Home from "./pages/Home";
 import MovieDashboard from "./pages/MovieDashboard";
 import WatchList from "./pages/Watchlist";
 import { GenericStyle } from "./styles/Theme";
+import AddFavourites from "./components/AddFavourites";
+
 
 const App = () => {
   const [user, setUser] = useState(null);
+
+
+  
 
   return (
     <div className="App">
