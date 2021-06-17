@@ -96,12 +96,17 @@ export const SubmitButton = styled.button`
     border-color: transparent;
     }
 `
-//========== Movie dashboard ============== // 
+//========== Navbar ============== // 
 export const Nav = styled.nav`
     height: 100px;
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     padding-right: 40px;
+
+    /* ul{
+
+    } */
 
     ul{
         padding-right: 50px;
