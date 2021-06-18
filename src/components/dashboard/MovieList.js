@@ -41,7 +41,7 @@ const MovieList = () => {
 
   return (
     <>
-    <Container>
+    <Container style={{background:'black'}}>
       <Header>
         <FormSearchbox onSubmit={handleOnSubmit}>
           <SearchInput

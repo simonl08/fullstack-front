@@ -7,15 +7,16 @@
 }
 
 .tag {
-    background-color: white;
-    padding: 0.8rem;
+    background-color: #705e3f;
+    padding: 0.5rem;
     border-radius: 5px;
     font-weight: bold;
+    border-radius: 50px;
 }
 
 .tag.green {
+    color:rgb(5, 255, 5);
     color:rgb(0, 255, 0);
-
 }
 .tag.orange{
     color: orange;

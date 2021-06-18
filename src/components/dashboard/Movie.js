@@ -29,7 +29,7 @@ const Movie = ({title, poster_path, overview, vote_average}) => (
            
         <div className = "movieOver">
             <h2>Overview</h2>
-            <p>{overview}</p>
+            <p style={{fontWeight:100}}>{overview}</p>
         </div>
     </MovieCards>
 );
