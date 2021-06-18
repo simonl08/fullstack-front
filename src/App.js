@@ -4,10 +4,16 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 //components
 import Home from "./pages/Home";
 import MovieDashboard from "./pages/MovieDashboard";
+import WatchList from "./pages/Watchlist";
 import { GenericStyle } from "./styles/Theme";
+import AddFavourites from "./components/AddFavourites";
+
 
 const App = () => {
   const [user, setUser] = useState(null);
+
+
+  
 
   return (
     <div className="App">
@@ -27,6 +33,9 @@ const App = () => {
         ) : (
           <Redirect to="/" />
         )}
+        <Route path="/watchlist">
+          <WatchList user={user} setUser={setUser}/>
+        </Route>
       </Router>
     </div>
   );

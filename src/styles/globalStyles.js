@@ -11,18 +11,20 @@ export const Container = styled.div` //main page container template
      background-size: cover; 
 `;
 
-export const ContainerTemplateHome = styled.div` //main page container template
+export const ContainerTemplateHome = styled.div` //homepage container
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     padding-right: 50px;
    
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    
-`
+
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(101,103,102,1) 51%, rgba(218,210,210,1) 100%);
+;
 
 export const HomepageContainer = styled.div`
   
@@ -89,9 +91,7 @@ export const StyledInputs = styled.input`
     height: 40px;
     border-radius: 4px;
     padding: 0px 10px;
-    /* font-family: 'Staatliches', cursive; */
 `
-
 export const SubmitButton = styled.button`
     margin-top: 15px;
     align-self: center;
@@ -104,14 +104,19 @@ export const SubmitButton = styled.button`
     border-color: transparent;
     }
 `
-//========== Movie dashboard ============== // 
+//========== Navbar ============== // 
 export const Nav = styled.nav`
     height: 80px;
     display: flex;
-   align-items: center;
-   justify-content: flex-end;
-   background-color: black;
-color: #fff;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: black;
+    color: #fff;
+
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 40px;
+
     ul{
         padding-right: 50px;
         /* margin-top: 60px; */
@@ -150,7 +155,6 @@ export const SearchInput = styled.input`
     color: white;
     font-family: inherit;
     font-size: 1.2rem;
-    /* padding: 0.5rem 10rem; */
     width: 60%;
     height: 40px;
     padding-left: 30px;
@@ -178,11 +182,13 @@ export const MovieCards = styled.div`
 
     img{
         width: 100%;
+        height: 375px;
     }
 
     .movie-info {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: space-between;
     padding: 3px;
     flex: 1;
@@ -193,6 +199,29 @@ export const MovieCards = styled.div`
         margin: 10px;
         font-size: 17px; 
         font-weight: 100 !important;
+   
+    text-align: center;
+    min-height: 150px;
+    margin-bottom: 15px;
+    }
+
+    h3{
+        color: white;
+        font-size: 24px;
+    }
+
+    .rating{
+        display: inline-block;
+        position: relative;
+        justify-content: flex-end;
+        left: 95px;
+        bottom: 470px;
+        align-items: flex-end;
+    }
+
+    //rating font size
+    span{
+        font-size: 20px;
     }
         
     .movieOver{
@@ -206,7 +235,7 @@ export const MovieCards = styled.div`
     position: absolute;
     bottom: 0;
     height: 100%;
-    transform: translateY(100%);
+    transform: translateY(90%);
     transition: transform 0.3s ease-in-out;
     }
 
@@ -215,9 +244,15 @@ export const MovieCards = styled.div`
         margin-top: 20px;
     }
 
-
-    &:hover .movieOver {
+    .movieOver:hover {
     transform: translateY(0%);
+    }
+
+    &:hover{
+        /* box-sizing: border-box; */
+        border:solid 1px yellow;
+        transition: 0.2s ease;
+        
     }
 `;
 
