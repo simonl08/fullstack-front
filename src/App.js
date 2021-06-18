@@ -12,9 +12,6 @@ import AddFavourites from "./components/AddFavourites";
 const App = () => {
   const [user, setUser] = useState(null);
 
-
-  
-
   return (
     <div className="App">
       <GenericStyle />
