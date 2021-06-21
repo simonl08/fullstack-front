@@ -23,7 +23,7 @@ export default function SignUp({user, setUser}) {
                 <StyledInputs type="text" placeholder="Username" value={name} onChange={(e) => setName(e.target.value) }></StyledInputs>
                 <StyledInputs type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></StyledInputs>
                 <StyledInputs type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}></StyledInputs>
-                <SubmitButton type="submit">Submit</SubmitButton>
+                <SubmitButton type="submit">Register</SubmitButton>
             </Form>
         </div>
     );

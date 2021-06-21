@@ -17,7 +17,7 @@ export default function LoginForm ({user, setUser}) {
                 <h1>Login</h1>
                 <StyledInputs type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}></StyledInputs>
                 <StyledInputs type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)}></StyledInputs>
-                <SubmitButton type="submit">Submit</SubmitButton>
+                <SubmitButton type="submit">Login</SubmitButton>
             </Form>
     );
 }

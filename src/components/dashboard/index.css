@@ -7,7 +7,7 @@
 }
 
 .tag {
-    background-color: #705e3f;
+    background-color: #ffffff;
     padding: 0.5rem;
     border-radius: 5px;
     font-weight: bold;
@@ -16,7 +16,6 @@
 
 .tag.green {
     color:rgb(5, 255, 5);
-    color:rgb(0, 255, 0);
 }
 .tag.orange{
     color: orange;
