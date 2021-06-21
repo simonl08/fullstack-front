@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import display from "../images/mmot.jpeg";
 // =====homepage ======
 export const Container = styled.div`
   //main page container template
@@ -107,26 +106,40 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-color: darkgray;
+  background-color: black;
   color: #fff;
-
   flex-direction: row;
   justify-content: flex-end;
   padding-right: 40px;
+  border-bottom: 6px solid #baa98b;;
 
   ul {
     padding-right: 50px;
     font-size: 24px;
   }
 
+  ul a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  ul a:hover{
+    color: #baa98b;
+    border-bottom: 4px solid #baa98b;
+  }
+
   button {
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
     border: none;
-    background-color: #baa98b;
+    background-color: transparent;
+    border: 4px solid #baa98b;
     color: #fff;
-    margin-right: 40px;
-    margin-left: 40px;
+  }
+
+  button:hover {
+    background-color: #baa98b;
+    cursor: pointer;
   }
 `;
 // ========== Movie dashboard ============== //
@@ -146,17 +159,17 @@ export const FormSearchbox = styled.form`
 
 export const SearchInput = styled.input`
   background-color: transparent;
-  border: 2px solid #22254b;
+  border: 2px solid #baa98b;
   border-radius: 50px;
   color: white;
   font-family: inherit;
   font-size: 1.2rem;
   width: 60%;
   height: 40px;
-  padding-left: 30px;
+  padding: 0 30px 0 30px;
 
   &:focus {
-    background-color: #22254b;
+    /* background-color: #baa98b; */
     outline: none;
   }
 `;
@@ -170,7 +183,6 @@ export const MovieContainer = styled.div`
 export const MovieCards = styled.div`
   background-color: #baa98b;
   border-radius: 3px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   margin: 1rem;
   overflow: hidden;
   position: relative;
@@ -191,7 +203,7 @@ export const MovieCards = styled.div`
     margin-bottom: 5px;
     }
 
-  h3 {
+  h3{
     color: white;
     font-size: 24px;
     padding-bottom: 20px;
@@ -212,8 +224,7 @@ export const MovieCards = styled.div`
   }
 
   .movieOver {
-    /* background-color: rgba(186, 169, 139, 0.7); */
-    background-color: white;
+    background-color: rgba(120,108,86,0.7);
     overflow: hidden;
     position: absolute;
     bottom: 0;
@@ -222,13 +233,20 @@ export const MovieCards = styled.div`
     transition: transform 0.3s ease-in-out;
   }
 
-  h2, p {
+  h2 {
     text-align: center;
     margin-top: 15px;
   }
 
+  p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    text-align: center;
+  }
+
   .movieOver:hover {
     transform: translateY(0%);
+    color: white;
   }
 
   &:hover {
