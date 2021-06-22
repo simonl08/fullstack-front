@@ -252,32 +252,7 @@ export const MovieCards = styled.div`
 
 
 // Pagination (page number results)
-
 export const PaginationContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 2rem;
-  border-top: 6px solid #baa98b;;
-
-  li {
-    list-style: none;
-    display: inline;
-    overflow-y: auto;
-    margin: 5px;
-  }
-
-  li a {
-    text-decoration: none;
-    color: white;
-  }
-
-  li a:hover {
-    color: #baa98b;
-  }
-`;
-
-export const PaginationContainer2 = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;

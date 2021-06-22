@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Movie from "./Movie";
+
+//components
 import "../dashboard/index.css";
-// import Pagination from "./Pagination";
 import { Container, Header, SearchInput, MovieContainer, FormSearchbox} from "../../styles/globalStyles";
-import CustomPagination from "./PaginationCustom";
+import CustomPagination from "./Pagination";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -17,7 +18,7 @@ const MovieList = () => {
   useEffect(() => {
     trendingMovies();
     // eslint-disable-next-line 
-    // searchMovies();
+    searchMovies();
     // eslint-disable-next-line 
   }, [page]);
   
