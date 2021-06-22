@@ -276,3 +276,15 @@ export const PaginationContainer = styled.div`
     color: #baa98b;
   }
 `;
+
+export const PaginationContainer2 = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-top: 6px solid #baa98b;;
+
+  .MuiPagination-ul{
+    margin-top: 10px;
+  }
+`

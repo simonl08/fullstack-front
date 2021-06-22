@@ -1,74 +1,54 @@
 import React, { useEffect, useState } from "react";
-import ReactPaginate from 'react-paginate';
-
+import axios from "axios";
 import Movie from "./Movie";
 import "../dashboard/index.css";
-import Pagination from "./Pagination";
-import { Container, Header, SearchInput, MovieContainer, FormSearchbox } from "../../styles/globalStyles";
+// import Pagination from "./Pagination";
+import { Container, Header, SearchInput, MovieContainer, FormSearchbox} from "../../styles/globalStyles";
+import CustomPagination from "./PaginationCustom";
 
-const APIURL =
-  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1";
-const SEARCHAPI =
-  "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 const MovieList = () => {
-  const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [totalResults, setTotalResults] = useState(0)
-  const [currentPage, setCurrentPage] = useState(1)
-
-  //test
-  // const [pageNumber, setPageNumber] = useState(1)
-  // const pagesVisited = pageNumber * movies
+  const [page, setPage] = useState(1);
+  const [movies, setMovies] = useState([]);
+  const [maxPages, setMaxPages] = useState();
 
   useEffect(() => {
-    trendingMovies(APIURL)
-  }, []);
-
-  const trendingMovies = (API) => {
-    fetch(API)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setMovies(data.results);
-      });
+    trendingMovies();
+    // eslint-disable-next-line 
+    // searchMovies();
+    // eslint-disable-next-line 
+  }, [page]);
+  
+  const trendingMovies = async () => {
+    const {data} = await axios.get(
+      `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=${page}`
+    );
+    console.log(data)
+    setMovies(data.results);
+    setMaxPages(data.total_pages);
   };
 
-  const getMovies = (API) => {
-    fetch(API)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setMovies(data.results);
-        setTotalResults(data.total_results)
-      });
+  const searchMovies = async () => {
+    const {data} = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?&api_key=${API_KEY}&query=${searchTerm}&page=${page}`
+    );
+    setMovies(data.results);
+    setMaxPages(data.total_pages);
   };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
     if (searchTerm) {
-      getMovies(SEARCHAPI + searchTerm);
+      searchMovies();
     }
   };
 
   const handleOnChange = (e) => {
     setSearchTerm(e.target.value);
   };
-
-  const nextPage = (pageNumber) => {
-    if (searchTerm) {
-      getMovies(SEARCHAPI + searchTerm +`&page=${pageNumber}`);
-      setCurrentPage(pageNumber)
-    }
-  }
-  const numberPages = Math.floor(totalResults / 20);
-
-  //test
-  // const pageCount = Math.ceil(totalResults / 20)
-  // const changePage = ({selected}) => {
-  //   setPageNumber(selected)
-  // }
   
   return (
     <>
@@ -87,21 +67,13 @@ const MovieList = () => {
         {movies.length > 0 &&
           movies.map((movie) => <Movie key={movie.id} {...movie} />)}
       </MovieContainer>
-      {/* <ReactPaginate
-        previousLabel={"Prev"}
-        nextLabel={"Next"}
-        pageCount={numberPages}
-        onPageChange={currentPage}
-        containerClassName={"paginationButtons"}
-        previousLinkClassName={"previousButton"}
-        nextLinkClassName={"nextButton"}
-        disabledeClassName={"paginationDisabled"}
-        activeClassName={"paginationActive"}
-      /> */}
-      { totalResults > 20 ? <Pagination pages={numberPages} nextPage={nextPage} currentPage={currentPage}/> : ''}
-      </Container>
-    </>
+      {maxPages > 1 &&
+      <CustomPagination setPage={setPage} maxPages={maxPages}/>
+    }
+    </Container>
+   </>
   );
+
 };
 
 export default MovieList;
