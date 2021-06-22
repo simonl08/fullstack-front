@@ -7,13 +7,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(101, 103, 102, 1) 51%,
-    rgba(218, 210, 210, 1) 100%
-  );
-  background-size: cover;
+  background: black;
 `;
 
 //homepage container
@@ -229,6 +223,7 @@ export const MovieCards = styled.div`
     position: absolute;
     bottom: 0;
     height: 100%;
+    width: 100%;
     transform: translateY(90%);
     transition: transform 0.3s ease-in-out;
   }
@@ -254,3 +249,17 @@ export const MovieCards = styled.div`
     transition: 0.2s ease;
   }
 `;
+
+
+// Pagination (page number results)
+export const PaginationContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-top: 6px solid #baa98b;;
+
+  .MuiPagination-ul{
+    margin-top: 10px;
+  }
+`
