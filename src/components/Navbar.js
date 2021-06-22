@@ -9,7 +9,8 @@ export default function Navbar({ user, setUser }) {
   return (
     <Nav>   
       <ul><Link to="/dashboard">Movie List</Link></ul>
-      <ul><Link to="/watchlist">Watchlist</Link></ul>
+      {/* <ul><Link to="/watchlist">Watchlist</Link></ul> */}
+      <ul>WatchList</ul>
       <ul>Hello {user}</ul>
       <button onClick={() => logoutHandler()}>Logout</button>
     </Nav>

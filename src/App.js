@@ -6,11 +6,16 @@ import Home from "./pages/Home";
 import MovieDashboard from "./pages/MovieDashboard";
 import WatchList from "./pages/Watchlist";
 import { GenericStyle } from "./styles/Theme";
-import AddFavourites from "./components/AddFavourites";
-
 
 const App = () => {
   const [user, setUser] = useState(null);
+  const [movies, setMovies] = useState([]);
+  const [favorites, setFavourites] = useState([]);
+
+  const handleFavouritesClick = (movie) => {
+    const newFavouriteList = [...favorites, movie];
+    setFavourites(newFavouriteList);
+  };
 
   return (
     <div className="App">
@@ -31,7 +36,7 @@ const App = () => {
           <Redirect to="/" />
         )}
         <Route path="/watchlist">
-          <WatchList user={user} setUser={setUser}/>
+          <WatchList />
         </Route>
       </Router>
     </div>

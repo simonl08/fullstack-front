@@ -6,14 +6,16 @@ import Movie from "./Movie";
 import "../dashboard/index.css";
 import { Container, Header, SearchInput, MovieContainer, FormSearchbox} from "../../styles/globalStyles";
 import CustomPagination from "./Pagination";
+import AddFavourite from "./AddFavourites.js";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const MovieList = () => {
+const MovieList = ({movies, setMovies, favorites, setFavourites, handleFavouritesClick}) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
-  const [movies, setMovies] = useState([]);
   const [maxPages, setMaxPages] = useState();
+  // const [movies, setMovies] = useState([]);
+  // const [favorites, setFavourites] = useState([]);
 
   useEffect(() => {
     trendingMovies();
@@ -22,6 +24,7 @@ const MovieList = () => {
     // eslint-disable-next-line 
   }, [page]);
   
+  //Fetch API requests
   const trendingMovies = async () => {
     const {data} = await axios.get(
       `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}&page=${page}`
@@ -50,6 +53,12 @@ const MovieList = () => {
   const handleOnChange = (e) => {
     setSearchTerm(e.target.value);
   };
+
+  //Add favourites
+  // const handleFavouritesClick = (movie) => {
+  //   const newFavouriteList = [...favorites, movie];
+  //   setFavourites(newFavouriteList);
+  // };
   
   return (
     <>
@@ -64,9 +73,9 @@ const MovieList = () => {
           />
         </FormSearchbox>
       </Header>
-      <MovieContainer>
+      <MovieContainer >
         {movies.length > 0 &&
-          movies.map((movie) => <Movie key={movie.id} {...movie} />)}
+          movies.map((movie) => <Movie key={movie.id} {...movie} movie={movie} handleFavouritesClick ={handleFavouritesClick} AddFavourite={AddFavourite}/>)}
       </MovieContainer>
       {maxPages > 1 &&
       <CustomPagination setPage={setPage} maxPages={maxPages}/>
