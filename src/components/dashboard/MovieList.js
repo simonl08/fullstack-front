@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Movie from "./Movie";
 
 //components
 import "../dashboard/index.css";
-import { Container, Header, SearchInput, MovieContainer, FormSearchbox} from "../../styles/globalStyles";
+import Movie from "./Movie";
 import CustomPagination from "./Pagination";
 import AddFavourite from "./AddFavourites.js";
+import { Container, Header, SearchInput, MovieContainer, FormSearchbox} from "../../styles/globalStyles";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const MovieList = ({movies, setMovies, favorites, setFavourites, handleFavouritesClick}) => {
+const MovieList = ({movies, setMovies, favorites, setFavourites, handleFavouritesClick, AddFaveMovie}) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
   const [maxPages, setMaxPages] = useState();
@@ -75,7 +75,7 @@ const MovieList = ({movies, setMovies, favorites, setFavourites, handleFavourite
       </Header>
       <MovieContainer >
         {movies.length > 0 &&
-          movies.map((movie) => <Movie key={movie.id} {...movie} movie={movie} handleFavouritesClick ={handleFavouritesClick} AddFavourite={AddFavourite}/>)}
+          movies.map((movie) => <Movie key={movie.id} {...movie} movie={movie} handleFavouritesClick ={AddFaveMovie} AddFavourite={AddFavourite}/>)}
       </MovieContainer>
       {maxPages > 1 &&
       <CustomPagination setPage={setPage} maxPages={maxPages}/>

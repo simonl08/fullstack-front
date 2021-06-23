@@ -1,5 +1,6 @@
 import "../dashboard/index.css"
 import { MovieCards } from "../../styles/globalStyles"
+import noImage from "../../images/imageErr.jpg"
 
   // Movie card
   const IMGPATH = "https://image.tmdb.org/t/p/w1280";
@@ -16,7 +17,9 @@ import { MovieCards } from "../../styles/globalStyles"
 
   const Movie = ({title, poster_path, overview, vote_average, AddFavourite, movie, handleFavouritesClick}) => (
       <MovieCards>
-          <img src={IMGPATH + poster_path} alt={title} />
+          {poster_path === null ? 
+          <img src={noImage} alt={title} />:
+          <img src={IMGPATH + poster_path} alt={title} />}
           <div className = "movie-info">
             <div onClick={() => handleFavouritesClick(movie)}>
               <AddFavourite/>
@@ -31,7 +34,7 @@ import { MovieCards } from "../../styles/globalStyles"
             
           <div className = "movieOver">
               <h2>Overview</h2>
-              <p style={{fontWeight:100}}>{overview}</p>
+              <p>{overview}</p>
           </div>
       </MovieCards>
   );
