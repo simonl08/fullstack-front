@@ -9,13 +9,6 @@ import { GenericStyle } from "./styles/Theme";
 
 const App = () => {
   const [user, setUser] = useState(null);
-  const [movies, setMovies] = useState([]);
-  const [favorites, setFavourites] = useState([]);
-
-  const handleFavouritesClick = (movie) => {
-    const newFavouriteList = [...favorites, movie];
-    setFavourites(newFavouriteList);
-  };
 
   return (
     <div className="App">

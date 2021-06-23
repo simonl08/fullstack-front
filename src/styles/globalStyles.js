@@ -108,7 +108,7 @@ export const Nav = styled.nav`
   border-bottom: 6px solid #baa98b;;
 
   ul {
-    padding-right: 50px;
+    margin-right: 50px;
     font-size: 24px;
   }
 
@@ -120,6 +120,12 @@ export const Nav = styled.nav`
   ul a:hover{
     color: #baa98b;
     border-bottom: 4px solid #baa98b;
+  }
+
+  .watchlist:hover{
+    color: #baa98b;
+    border-bottom: 4px solid #baa98b;
+    cursor: pointer;
   }
 
   button {
@@ -163,7 +169,7 @@ export const SearchInput = styled.input`
   padding: 0 30px 0 30px;
 
   &:focus {
-    /* background-color: #baa98b; */
+    background-color: rgba(120,108,86,0.4);
     outline: none;
   }
 `;
@@ -226,15 +232,17 @@ export const MovieCards = styled.div`
     width: 100%;
     transform: translateY(90%);
     transition: transform 0.3s ease-in-out;
+    padding: 5px;
   }
 
   h2 {
+    font-size: 2rem;
     text-align: center;
     margin-top: 15px;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-top: 15px;
     text-align: center;
   }
@@ -245,21 +253,103 @@ export const MovieCards = styled.div`
   }
 
   &:hover {
-    border: solid 1px yellow;
-    transition: 0.2s ease;
+    transition: 0.3s ease;
+    transform: scale(1.1);
   }
 `;
-
 
 // Pagination (page number results)
 export const PaginationContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: white;
-  border-top: 6px solid #baa98b;;
+  border-top: 6px solid #baa98b;
+
+  .jCUIhT{
+    background-color: black;
+  }
+
+  button{
+    background-color: #baa98b;
+  }
+
+  button:hover{
+    background-color: white;
+  }
+
+  .MuiPaginationItem-ellipsis {
+    height: auto;
+    color: #baa98b;
+}
 
   .MuiPagination-ul{
     margin-top: 10px;
+  }
+`
+
+// WatchList popup
+export const WatchListContainer = styled.div`
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: white;
+  font-size: 2rem;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+
+  h2 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .popup-inner {
+    position: relative;
+    padding: 32px;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(0,0,0,0.8);
+    overflow: auto;
+  }
+
+  .popup-inner .close-btn{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+`;
+
+// Add fave
+export const AddFave = styled.div`
+  background-color: rgba(120,108,86);
+  color: white;
+  padding: 5px;
+
+  svg{
+    margin-left: 5px;
+  }
+
+  &:hover{
+    cursor: pointer;
+    background-color: black;
+  }
+`
+// remove fave
+export const RemoveFave = styled.div`
+  background-color: rgba(120,108,86);
+  color: white;
+  padding: 5px;
+
+  svg{
+    margin-left: 5px;
+  }
+
+  &:hover{
+    cursor: pointer;
+    background-color: black;
   }
 `
