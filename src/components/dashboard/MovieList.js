@@ -6,7 +6,7 @@ import "../dashboard/index.css";
 import Movie from "./Movie";
 import CustomPagination from "./Pagination";
 import AddFavourite from "./AddFavourites.js";
-import { Container, Header, SearchInput, MovieContainer, FormSearchbox} from "../../styles/globalStyles";
+import { Container, Header, SearchInput, FormSearchbox} from "../../styles/globalStyles";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -62,7 +62,6 @@ const MovieList = ({movies, setMovies, favorites, setFavourites, handleFavourite
   
   return (
     <>
-    <Container>
       <Header>
         <FormSearchbox onSubmit={handleOnSubmit}>
           <SearchInput
@@ -73,10 +72,9 @@ const MovieList = ({movies, setMovies, favorites, setFavourites, handleFavourite
           />
         </FormSearchbox>
       </Header>
-      <MovieContainer >
+    <Container>
         {movies.length > 0 &&
           movies.map((movie) => <Movie key={movie.id} {...movie} movie={movie} handleFavouritesClick ={AddFaveMovie} AddFavourite={AddFavourite}/>)}
-      </MovieContainer>
       {maxPages > 1 &&
       <CustomPagination setPage={setPage} maxPages={maxPages}/>
     }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import WatchListPopup from "./WatchListPopup";
-import AddFavourite from "../components/dashboard/AddFavourites";
+import RemoveFavourites from "../components/dashboard/RemoveFavourites";
 import Movie from "../components/dashboard/Movie";
 import { MovieContainer } from "../styles/globalStyles";
 
@@ -24,7 +24,7 @@ export default function Navbar({ user, setUser, favorites, handleFavouritesClick
       <WatchListPopup trigger={buttonPopup} setTrigger={setButtonPopup}>
         <MovieContainer>
         {favorites ? favorites.length > 0 &&
-          favorites.map((movie) => <Movie key={movie.id} {...movie} movie={movie} handleFavouritesClick ={handleFavouritesClick} AddFavourite={AddFavourite}/>):""}
+          favorites.map((movie) => <Movie key={movie.id} {...movie} movie={movie} handleFavouritesClick ={handleFavouritesClick} RemoveFavourites={RemoveFavourites}/>):""}
         </MovieContainer>
     </WatchListPopup>
     </Nav>

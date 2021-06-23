@@ -15,14 +15,15 @@ import noImage from "../../images/imageErr.jpg"
       }
   };
 
-  const Movie = ({title, poster_path, overview, vote_average, AddFavourite, movie, handleFavouritesClick}) => (
+  const Movie = ({title, poster_path, overview, vote_average, AddFavourite, movie, handleFavouritesClick, RemoveFavourites}) => (
       <MovieCards>
           {poster_path === null ? 
           <img src={noImage} alt={title} />:
           <img src={IMGPATH + poster_path} alt={title} />}
           <div className = "movie-info">
             <div onClick={() => handleFavouritesClick(movie)}>
-              <AddFavourite/>
+              {RemoveFavourites ? <RemoveFavourites/>:
+              <AddFavourite/>}
             </div>
               <h3>{title}</h3>
               <div className="rating">
