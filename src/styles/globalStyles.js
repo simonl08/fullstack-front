@@ -2,12 +2,11 @@ import styled from "styled-components";
 // =====homepage ======
 export const Container = styled.div`
   //main page container template
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
-  background: black;
 `;
 
 //homepage container
@@ -340,12 +339,14 @@ export const AddFave = styled.div`
 `
 // remove fave
 export const RemoveFave = styled.div`
+  display:flex;
   background-color: rgba(120,108,86);
   color: white;
-  padding: 5px;
+  padding: 3px;
 
   svg{
     margin-left: 5px;
+    margin-top: 4px;
   }
 
   &:hover{

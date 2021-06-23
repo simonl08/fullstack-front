@@ -12,11 +12,17 @@ export default function MovieDashboard({user, setUser}) {
       setFavourites(newFavouriteList);
     };
 
+    const RemoveFaveMovie = (movie) => {
+      const newFavouriteList = favorites.filter(
+        (favorites) => favorites.id !== movie.id
+      );
+      setFavourites(newFavouriteList);
+    };
+
   return (
       <>
-        <Navbar setUser={setUser} user={user} favorites={favorites} handleFavouritesClick={AddFaveMovie} />
+        <Navbar setUser={setUser} user={user} favorites={favorites} handleFavouritesClick={RemoveFaveMovie} />
         <MovieList movies={movies}setMovies={setMovies} favorites={favorites} setFavourites={setFavourites} handleFavouritesClick={AddFaveMovie} AddFaveMovie={AddFaveMovie}/>
-
       </>
     );
 }
