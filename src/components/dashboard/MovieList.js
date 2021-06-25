@@ -6,7 +6,7 @@ import "../dashboard/index.css";
 import Movie from "./Movie";
 import CustomPagination from "./Pagination";
 import AddFavourite from "./AddFavourites.js";
-import { Container, Header, SearchInput, FormSearchbox} from "../../styles/globalStyles";
+import { Container, Header, SearchInput, FormSearchbox, ResetBtn } from "../../styles/globalStyles";
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
@@ -64,8 +64,8 @@ const MovieList = ({movies, setMovies, favorites, setFavourites, handleFavourite
             value={searchTerm}
             onChange={handleOnChange}
           />
+          <ResetBtn onClick={() => trendingMovies()}>Reset</ResetBtn>
         </FormSearchbox>
-          <button onClick={() => trendingMovies()}>Reset</button>
       </Header>
     <Container>
         {movies.length > 0 &&

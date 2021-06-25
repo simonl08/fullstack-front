@@ -257,6 +257,21 @@ export const MovieCards = styled.div`
   }
 `;
 
+export const ResetBtn = styled.button`
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: transparent;
+  border: 2px solid #baa98b;
+  color: #fff;
+  
+  &:hover {
+    background-color: #baa98b;
+    cursor: pointer;
+  }
+`
+
 // Pagination (page number results)
 export const PaginationContainer = styled.div`
   width: 100%;
